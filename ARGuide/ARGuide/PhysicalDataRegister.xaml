@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             x:Class="ARGuide.PhysicalDataRegister">
+   
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                   <!--<RowDefinition Height="0.1*" />-->
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="0.1*" />
+                    <RowDefinition Height="0.6*" />
+                    <RowDefinition Height="1.8*" />
+                    <RowDefinition Height="1.8*" />
+                    <RowDefinition Height="1.8*" />
+                    <RowDefinition Height="1.8*" />
+                    <RowDefinition Height="0.1*" />
+                    <RowDefinition Height="0.8*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Text="讓我們一起擁有健康吧！" FontSize="18" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <Label Text="請先輸入基本資料" FontSize="15" TextColor="Black" HorizontalOptions="Center" VerticalOptions="End"/>
+                </Grid>
+                <!--<Grid Grid.Row="2">
+                    
+                </Grid>-->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="manEnable" Source="manBtnEdit_r.png" IsVisible="True" Grid.Column="0"/>
+                    <Image x:Name="manDisable" Source="manBtnEdit.png" IsVisible="False" Grid.Column="0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="manDisable_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image x:Name="womanDisable" Source="womenBtnEdit.png" IsVisible="True" Grid.Column="1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="womanDisable_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image x:Name="womanEnable" Source="womenBtnEdit_r.png" IsVisible="False" Grid.Column="1"/>
+                    <Label x:Name="sex" Text="" IsVisible="False"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2.5*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="生日" FontSize="12" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start"/>
+                        <Entry TextChanged="Birthday_TextChanged" Focused="Editor_Focused" HorizontalTextAlignment="End" VerticalOptions="End" Grid.Column="1" HorizontalOptions="FillAndExpand" x:Name="birthday" Text="{Binding birthday.Value, Mode=TwoWay}" Unfocused="birthday_Unfocused"/>
+                        <DatePicker x:Name="startDatePicker" IsVisible="false" IsEnabled="False"
+                    Format="d"  DateSelected="StartDatePicker_DateSelected" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="birthdayLabel" Text="{Binding birthday.Error}" FontSize="10" Grid.Column="1" TextColor="Red" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2.5*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="身高" FontSize="12" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start"/>
+                        <Entry HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="FillAndExpand" MaxLength="5" x:Name="tall" Text="{Binding tall.Value, Mode=TwoWay}" Grid.Column="1" Unfocused="tall_Unfocused" Keyboard="Numeric"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding tall.Error}" FontSize="10" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" TextColor="Red"  />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2.5*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="體重" FontSize="12" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start" />
+                        <Entry HorizontalTextAlignment="End" VerticalOptions="End" MaxLength="4" x:Name="weight" Text="{Binding weight.Value, Mode=TwoWay}" Grid.Column="1" Unfocused="weight_Unfocused" Keyboard="Numeric"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding weight.Error}" FontSize="10" Grid.Column="1" TextColor="Red" />
+                    </Grid>
+                    
+                </Grid>
+                <Grid Grid.Row="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2.5*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="年齡" FontSize="12" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start"/>
+                        <Entry HorizontalTextAlignment="End" VerticalOptions="End" MaxLength="4" x:Name="age" Text="{Binding age.Value, Mode=TwoWay}" Grid.Column="1" Unfocused="age_Unfocused" Keyboard="Numeric"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="1" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding age.Error}" FontSize="10" Grid.Column="1" TextColor="Red" />
+                    </Grid>
+                    
+                   
+                </Grid>
+                <Grid Grid.Row="8">
+                    <Image Source="physicalDataBtnPressedNorPng.png" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="PhysicalDataRegister_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+               
+            </Grid>
+            <Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

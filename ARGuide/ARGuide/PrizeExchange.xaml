@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ARGuide.PrizeExchange">
+   
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Image x:Name="PrizeImg" Aspect="AspectFill"/>
+                </Grid>
+                <Grid Grid.Row="1" BackgroundColor="#ececec">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.35*" />
+                            <ColumnDefinition Width="0.9*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="獎品名稱：" Grid.Column="0" TextColor="#794808" FontSize="15" VerticalOptions="Center" HorizontalOptions="End" />
+                        <Label x:Name="PrizeName" Grid.Column="1" TextColor="Black" FontSize="15" VerticalOptions="Center"  HorizontalOptions="Start" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.35*" />
+                            <ColumnDefinition Width="0.9*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="獎品點數：" Grid.Column="0" TextColor="#794808" FontSize="15" VerticalOptions="Center" HorizontalOptions="End" />
+                        <Label VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span x:Name="PrizePoint" FontSize="18" TextColor="#ec6941"/>
+                                    <Span Text="點" TextColor="#7b7b7b" FontSize="15"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.35*" />
+                            <ColumnDefinition Width="0.9*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="獎品數量：" Grid.Column="0" TextColor="#794808" FontSize="15" VerticalOptions="Center" HorizontalOptions="End"/>
+                        <Label VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span x:Name="amount" FontSize="18" TextColor="#ec6941"/>
+                                    <Span Text="份" TextColor="#7b7b7b" FontSize="15"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="0.5*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="請將手機拿至店家人員按確認," Grid.Row="0" Grid.Column="1" TextColor="#ec6941" FontSize="18" VerticalOptions="End" HorizontalOptions="Center" />
+                    <Label Text="以便兌換商品"  Grid.Row="1" Grid.Column="1" TextColor="#ec6941" FontSize="18" VerticalOptions="Start" HorizontalOptions="Center" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Image Source="funplayBtnChangeConfirm.png" HorizontalOptions="Center" VerticalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="confirm_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Grid>
+            </StackLayout>
+            <!-- Overlay -->
+            <!--<ContentView x:Name="Popupoverlay" IsVisible="False" BackgroundColor="#C0808080" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Image Source="funplayBg.png" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3.3*" />
+                            <RowDefinition Height="0.6*" />
+                            <RowDefinition Height="0.7*" />
+                            <RowDefinition Height="0.7*" />
+                            <RowDefinition Height="0.7*" />
+                            <RowDefinition Height="0.4*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="4*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*" />
+                                <ColumnDefinition Width="5*" />
+                                <ColumnDefinition Width="1.2*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="qrCodeBtnCancel.png" Grid.Column="2" HorizontalOptions="Start">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Cancel_Tapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.2*" />
+                                <ColumnDefinition Width="1.7*" />
+                                <ColumnDefinition Width="2.3*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label  Text="獎品名稱：" TextColor="#794808" FontSize="15" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <Label x:Name="popPrizeName" TextColor="#010101" FontSize="15" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.2*" />
+                                <ColumnDefinition Width="1.7*" />
+                                <ColumnDefinition Width="2.3*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="獎品點數：" TextColor="#794808" FontSize="15" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <Label HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="2">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span x:Name="popPrizePoint" TextColor="#ec6941" FontSize="18"/>
+                                        <Span Text="點" TextColor="#7b7b7b" FontSize="15"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.2*" />
+                                <ColumnDefinition Width="1.7*" />
+                                <ColumnDefinition Width="2.3*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="獎品數量：" TextColor="#794808" FontSize="15" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start"/>
+                            <Label HorizontalOptions="Start" VerticalOptions="Start" Grid.Column="2">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span x:Name="popPrizeAmount" TextColor="#ec6941" FontSize="18"/>
+                                        <Span Text="份" TextColor="#7b7b7b" FontSize="15"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Grid>
+                        <Grid Grid.Row="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.8*" />
+                                <ColumnDefinition Width="5*" />
+                                --><!--<ColumnDefinition Width="0.3*" />--><!--
+                            </Grid.ColumnDefinitions>
+                            <Editor x:Name="EnterMemberNumber" Grid.Column="1"  WidthRequest="253.5" HorizontalOptions="Center" VerticalOptions="End" BackgroundColor="White" Placeholder="請店家輸入序號" />
+                        </Grid>
+                        <Grid Grid.Row="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.9*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0.2*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="funplaySend.png" Grid.Column="1"  HorizontalOptions="Center" VerticalOptions="Start">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="send_Tapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </Grid>
+                </AbsoluteLayout>
+            </ContentView>-->
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

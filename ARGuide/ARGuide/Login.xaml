@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"                          
+             x:Class="ARGuide.Login"
+             xmlns:local="clr-namespace:ARGuide">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.8*"/>
+                </Grid.RowDefinitions>
+                <Image    Grid.RowSpan="5" Aspect="Fill"   Source="regiisterBgPng.png" BackgroundColor="Transparent"/>
+                <Grid Grid.Row="0">
+                    <Image Source="preIcon.png" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,20,0,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="back_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="EMAIL" FontSize="15" TextColor="White" Grid.Column="1" VerticalOptions="Start"/>
+                            <local:CustomEntry x:Name="email" TextColor="White" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="End" />
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="密碼" FontSize="15" TextColor="White" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start"/>
+                            <local:CustomEntry x:Name="password" TextColor="#e6e300" Grid.Column="1" IsPassword="True" VerticalOptions="End"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Image Source="enterBtn.png" HorizontalOptions="Center" VerticalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="login_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Label Text="忘記密碼？" TextColor="White" FontSize="15" VerticalOptions="Start" Margin="80,0,0,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="RsetPassword_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

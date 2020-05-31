@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ARGuide"
+             x:Class="ARGuide.MainPage" >
+    <!--BackgroundImageSource="startBgPng.jpg" > -->
+
+    <!--<StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Image Source="startLogoPng.png" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="timer" Grid.Column="1" TextColor="White" FontSize="30" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Label Text="0%" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center" TextColor="White" FontSize="30"/>
+            </Grid>
+        </Grid>
+        
+    </StackLayout>-->
+    <Grid x:Name="myGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!-- 0 -->
+            <RowDefinition Height="*" />
+            <!-- 1 -->
+            <RowDefinition Height="*" />
+            <!-- 2 -->
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <!-- 0 -->
+            <ColumnDefinition Width="*" />
+            <!-- 1 -->
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <!-- 2 -->
+
+        </Grid.ColumnDefinitions>
+        <Image    Grid.RowSpan="5" Grid.ColumnSpan="5" Aspect="Fill"   Source="startBgPng.png" BackgroundColor="Transparent"/>
+        <Image    Grid.Row="2" Grid.Column="2" Aspect="Fill"   Source="startLogoPng.png" BackgroundColor="Transparent"/>
+        <Label x:Name="timer" Grid.Column="1" TextColor="White" FontSize="30" HorizontalOptions="End" VerticalOptions="Center"/>
+        <Label Text="0%" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center" TextColor="White" FontSize="30"/>
+    </Grid>
+
+</ContentPage>

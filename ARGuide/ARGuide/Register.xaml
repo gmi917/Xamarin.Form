@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ARGuide.Register"
+             BackgroundImageSource="regiisterBgPng.png">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!--註冊-->
+                <Image Source="regiisterBtnPressedNorPng.png" Grid.Row="6" Grid.Column="0" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="emailRegister_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <!--已有帳號，請登入-->
+                <Image Source="signInBtnPressedNorPng.png" Grid.Row="8" Grid.Column="0" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="accountLogin_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                
+            </Grid>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

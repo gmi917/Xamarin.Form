@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ARGuide.Company">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="3*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*" />
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Image Source="cpfIcon.png" HorizontalOptions="Center" VerticalOptions="End"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Label Text="我們希望你喜歡ISC賽事產品" FontSize="15" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Grid>
+                    
+                </Grid>
+                <Frame Grid.Row="1"  BorderColor="#dbdbdb" HasShadow="False" BackgroundColor="#fafafa">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0.1*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="概念設計與研發" FontSize="15" TextColor="Black" Grid.Column="1"/>
+
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0.1*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="藉由運動安全監測結合趣味旅遊觀光的運動APP" FontSize="12" TextColor="Black" Grid.Column="1"/>
+
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0.1*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="財團法人資訊工程策進會" FontSize="12" TextColor="#002ff9" TextDecorations="Underline" Grid.Column="1"/>
+                        </Grid>
+                        
+                    </Grid>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

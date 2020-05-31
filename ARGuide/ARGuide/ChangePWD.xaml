@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ARGuide.ChangePWD">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Text="X" Priority="0" Clicked="close_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.*" />
+                    <RowDefinition Height="0.7*" />
+                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="0.7*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="3*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="新密碼：" TextColor="Black" FontSize="15" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                    <!--<Frame Grid.Column="1" CornerRadius="10" >-->
+                        <Entry x:Name="newPWD" Grid.Column="1" IsPassword="True" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="End" />
+                    <!--</Frame>-->
+                    <Image x:Name="nHidePWD" Source="closeeyeBtn.png" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="nHidePWD_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image x:Name="nShowPWD" Source="eyeBtn.png" IsVisible="False" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="nShowPWD_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="確認密碼：" TextColor="Black" FontSize="15" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                    <!--<Frame Grid.Column="1" CornerRadius="10">-->
+                        <Entry x:Name="confirmPWD" Grid.Column="1" IsPassword="True" BackgroundColor="White" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="End" />
+                    <!--</Frame>-->
+                    <Image x:Name="cHidePWD" Source="closeeyeBtn.png" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="cHidePWD_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image x:Name="cShowPWD" Source="eyeBtn.png" IsVisible="False" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="cShowPWDS_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Image Source="enterPWDBtn.png" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="changePWD_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

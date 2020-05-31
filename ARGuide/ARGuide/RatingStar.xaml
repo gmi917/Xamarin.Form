@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ARGuide.Behaviors"
+             xmlns:local1="clr-namespace:ARGuide"
+             x:Class="ARGuide.RatingStar">
+   
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#e8e8e8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="0.3*" />
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" BackgroundColor="White" Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.04*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="1.5*" />
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="prizeImage" Grid.Column="1" Aspect="AspectFit"/>
+                    <Label x:Name="prizeName" TextColor="Black" FontAttributes="Bold" FontSize="15" Grid.Column="2" VerticalOptions="Start" Margin="10,30,0,0"/>
+                    <Label x:Name="today" TextColor="#999999" FontSize="10" Grid.Column="2" VerticalOptions="End" Margin="10,0,0,30"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid BackgroundColor="White" Margin="0,30,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="喜歡這次兌換產品嗎？" FontSize="12" TextColor="#6c6b6b" HorizontalOptions="Center" VerticalOptions="Center" Margin="10"/>
+                        <Image x:Name="RatingPrizeImg" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="5"/>
+                        <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                            <Grid>
+                                <Grid.Behaviors>
+                                    <local:StarBehavior x:Name="starOne" GroupName="myStar"/>
+                                </Grid.Behaviors>
+                                <Image x:Name="starBlankOne" Source="funplayStarIconBigOpen.png" />
+                                <Image x:Name="starSelectedOne" Source="funplayStarIconBigClose.png"
+                               IsVisible="{Binding Source={x:Reference starOne},Path=IsStarred}"/>
+                            </Grid>
+                            <Grid >
+                                <Grid.Behaviors>
+                                    <local:StarBehavior x:Name="starTwo" GroupName="myStar"/>
+                                </Grid.Behaviors>
+                                <Image x:Name="starBlankTwo" Source="funplayStarIconBigOpen.png" />
+                                <Image x:Name="starSelectedTwo" Source="funplayStarIconBigClose.png"
+                               IsVisible="{Binding Source={x:Reference starTwo},Path=IsStarred}"/>
+                            </Grid>
+                            <Grid >
+                                <Grid.Behaviors>
+                                    <local:StarBehavior x:Name="starThree" GroupName="myStar"/>
+                                </Grid.Behaviors>
+                                <Image x:Name="starBlankThree" Source="funplayStarIconBigOpen.png" />
+                                <Image x:Name="starSelectedThree" Source="funplayStarIconBigClose.png"
+                               IsVisible="{Binding Source={x:Reference starThree},Path=IsStarred}"/>
+                            </Grid>
+                            <Grid >
+                                <Grid.Behaviors>
+                                    <local:StarBehavior x:Name="starFour" GroupName="myStar"/>
+                                </Grid.Behaviors>
+                                <Image x:Name="starBlankFour" Source="funplayStarIconBigOpen.png" />
+                                <Image x:Name="starSelectedFour" Source="funplayStarIconBigClose.png"
+                               IsVisible="{Binding Source={x:Reference starFour},Path=IsStarred}"/>
+                            </Grid>
+                            <Grid >
+                                <Grid.Behaviors>
+                                    <local:StarBehavior x:Name="starFive" GroupName="myStar"/>
+                                </Grid.Behaviors>
+                                <Image x:Name="starBlankFive" Source="funplayStarIconBigOpen.png" />
+                                <Image x:Name="starSelectedFive" Source="funplayStarIconBigClose.png"
+                               IsVisible="{Binding Source={x:Reference starFive},Path=IsStarred}"/>
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout>
+                            <StackLayout.Resources>
+                                <ResourceDictionary>
+                                    <local1:RatingConverter x:Key="ratingConverter" />
+                                    <Style TargetType="Label" >
+                                        <Setter Property="TextColor" Value="#4CAF50" />
+                                    </Style>
+                                </ResourceDictionary>
+                            </StackLayout.Resources>
+                            <Label x:Name="ratingStar" IsVisible="False" Text="{Binding Source={x:Reference starFive},
+                                    Path=Rating, Converter={StaticResource ratingConverter}}" ></Label>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Label TextColor="#515151" Text="回饋與建議" FontSize="13" VerticalOptions="End" HorizontalOptions="Start" Margin="10,0,0,0"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Editor x:Name="editFeedback" VerticalOptions="FillAndExpand" Placeholder="請輸入您寶貴的意見（限300字內）" MaxLength="300" BackgroundColor="White"/>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Image Source="funplaycommentBtnSend.png" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ratingStar_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ARGuide.Setting"
+             BackgroundColor="Black">
+   
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Text="完成" Priority="0" Clicked="myProfile_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" BackgroundColor="#404040">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="accountIconEdit.png" VerticalOptions="Center" Aspect="AspectFit" Margin="10,0,10,0"/>
+                    <Label Text="編輯個人設定" TextColor="White" VerticalOptions="Center" FontSize="18"/>
+                    <Image Source="rightArrowIcon.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="editUserData_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="2" BackgroundColor="#404040">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="profileIconEdit.png" Margin="10,0,10,0"/>
+                    <Label Text="條款及細則" TextColor="White" FontSize="18" VerticalOptions="Center"/>
+                    <Image Source="rightArrowIcon.png" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="profile_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="3" BackgroundColor="#404040">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="confidentialIconEdit.png" Margin="10,0,10,0"/>
+                    <Label Text="蒐集個人資料告知事項" TextColor="White" FontSize="18" VerticalOptions="Center"/>
+                    <Image Source="rightArrowIcon.png" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="personalData_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="4" BackgroundColor="#404040">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="companyprofileIconEdit.png" Margin="10,0,10,0"/>
+                    <Label Text="關於我們" TextColor="White" FontSize="18" VerticalOptions="Center"/>
+                    <Image Source="rightArrowIcon.png" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="company_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="5" BackgroundColor="#404040">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="fbIconEdit.png" Margin="10,0,10,0"/>
+                    <Label Text="社群分享" TextColor="White" FontSize="18" VerticalOptions="Center"/>
+                    <Image Source="rightArrowIcon.png" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="8" BackgroundColor="#404040">
+                <Label Text="登出" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#ffc000" FontSize="18"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="logout_Tapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

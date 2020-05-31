@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ARGuide.Forget"
+             xmlns:local="clr-namespace:ARGuide">
+
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Image    Grid.RowSpan="3" Aspect="Fill"   Source="regiisterBgPng.png" BackgroundColor="Transparent"/>
+        <Grid Grid.Row="0">
+            <Image Source="preIcon.png" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,20,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.1*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="9*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="EMAIL" TextColor="White" Grid.Column="1"/>
+                    <local:CustomEntry x:Name="email" TextColor="White" HorizontalTextAlignment="End" VerticalOptions="Start" Text="{Binding email.Value, Mode=TwoWay}" Grid.Column="1" Unfocused="email_Unfocused"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="9*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding email.Error}" Grid.Column="1" TextColor="Red" VerticalOptions="Start" />
+                    <Label x:Name="checkMailBox" Grid.Column="1" VerticalOptions="Start" Text="請檢查您的電子信箱,我們已經傳送重設密碼指示給您了" IsVisible="False" TextColor="#fff99e" FontSize="12"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Image x:Name="resetBtn" Source="resetBtn.png" HorizontalOptions="Center" VerticalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="resetPWD_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </Grid>
+
+</ContentPage>
